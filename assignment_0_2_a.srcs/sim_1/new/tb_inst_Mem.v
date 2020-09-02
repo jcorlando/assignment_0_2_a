@@ -5,9 +5,9 @@ module tb_inst_Mem;
 // Parameters
 parameter WL_mem = 32, MEM_depth = 32;
 //Inputs
-reg [31 : 0] addr;
+reg [MEM_depth - 1 : 0] addr;
 //Outputs
-wire [31 : 0] instruction;
+wire [WL_mem - 1 : 0] instruction;
 
 inst_Mem # ( .WL_mem(WL_mem), .MEM_depth(MEM_depth) )
             DUT ( .addr(addr), .instruction(instruction) );
